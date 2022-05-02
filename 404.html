@@ -1,29 +1,26 @@
 <script src="http://cdn.bootcss.com/purl/2.3.1/purl.min.js"></script>
 <!DOCTYPE html>
 <html>
-    <h1>
-        <title>Example</title>
-    </h1>
-<script>
-window.alert("0");
-var url = purl();
-window.alert(url);
-if (url.attr('host') == 'mechanicalmind.cn') {
-    window.alert("1");
-    var old_url = url.attr('source');
-    var new_url = old_url.replace('mechanicalmind.cn', "81.69.248.226");
-    window.alert(new_url);
-    window.location.replace(new_url); 
-}else if (url.attr('host') == 'www.mechanicalmind.cn'){
-    window.alert("2");
-    var old_url = url.attr('source');
-    var new_url = old_url.replace('www.mechanicalmind.cn', "81.69.248.226");
-    window.alert(new_url);
-    window.location.replace(new_url);
-}else {
-    window.location.href="http://81.69.248.226/";
-}
-    
-</script>
-
+    <script>
+    var url = purl();
+    window.alert(url.attr('source'));
+    window.alert(url.attr('host'));
+    if (url.attr('host') == 'mechanicalmind.cn')
+    {
+        window.alert("前缀为mechanicalmind.cn");
+        var old_url = url.attr('source');
+        var new_url = old_url.replace('mechanicalmind.cn', "81.69.248.226");
+        window.alert(new_url);
+        window.location.replace(new_url); 
+    }else if (url.attr('host') == 'www.mechanicalmind.cn'){
+        window.alert("前缀为www.mechanicalmind.cn");
+        var old_url = url.attr('source');
+        var new_url = old_url.replace('www.mechanicalmind.cn', "81.69.248.226");
+        window.alert(new_url);
+        window.location.replace(new_url);
+    }else {
+        window.alert("其他情况");
+        window.location.href="http://81.69.248.226/";
+    }
+    </script>
 </html>
